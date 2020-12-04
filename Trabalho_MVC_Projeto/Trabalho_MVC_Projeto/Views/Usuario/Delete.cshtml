@@ -1,0 +1,72 @@
+﻿@model Trabalho_MVC_Projeto.Models.UsuarioModel
+
+
+@{
+    ViewBag.Title = "Detalhes do Usuario";
+}
+
+<br />
+<div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+    Detalhe dos Usuarios
+</div>
+
+<hr />
+
+@using (Html.BeginForm())
+{ 
+@Html.AntiForgeryToken()
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Detalhe do Fornecedor</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Usuario,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Usuario,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Nivel,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Nivel,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" value="Save" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="far fa-save">
+                                            </i>
+                                        </span>
+                                        <span class="text">Salvar</span>
+                                    </button>
+
+                                    <a class="btn btn-light" href="~/Usuario/Index">Voltar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}

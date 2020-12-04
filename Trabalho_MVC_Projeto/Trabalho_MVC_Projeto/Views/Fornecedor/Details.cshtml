@@ -1,0 +1,82 @@
+﻿@model Trabalho_MVC_Projeto.Models.FornecedorModel
+
+
+@{
+    ViewBag.Title = "Detalhe do Fornecedor";
+}
+
+<br />
+<div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+    Detalhe dos Fornecedor
+</div>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Detalhe do Fornecedor</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Nome,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Nome,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Cnpj,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Cnpj,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Telefone,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Telefone,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Produto,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.DisplayFor(model => model.Produto,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <a class="btn btn-light" href="~/Fornecedor/Index">Voltar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>}

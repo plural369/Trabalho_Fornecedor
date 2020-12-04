@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Trabalho_MVC_Projeto.Models.UsuarioModel>
+
+@{ ViewBag.Title = "Listar Cursos"; }
+@{string nivel = Session["Nivel"].ToString();}
+<br />
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">Listagem de Cursos</h4>
+
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+
+                            @*Datatable*@
+
+                            <table class="table" id="sisDataTable">
+                                <thead class=" text-primary">
+                                    <tr>
+                                        <th scope="col">@Html.DisplayNameFor(model => model.Usuario))</th>
+                                        <th scope="col">@Html.DisplayNameFor(model => model.Nivel)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @{ foreach (var item in Model)
+                                        {
+                                            <tr>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Usuario)
+                                                </td>
+                                                <td>
+                                                    @Html.DisplayFor(modelItem => item.Nivel)
+                                                </td>
+                                                @if(nivel.ToString() == "A")
+                                                    {
+                                                <td>
+
+                                                    @Html.ActionLink("Editar", "Edit", new { id = item.ID })
+                                                    @Html.ActionLink("Detalhes", "Details", new { id = item.ID })
+                                                    @Html.ActionLink("Apagar", "Delete", new { id = item.ID })
+                                                </td>
+                                                }
+                                                    else
+                                                    {
+                                                <td>
+                                                    @Html.ActionLink("Editar", "Edit", new { id = item.ID })
+                                                    @Html.ActionLink("Detalhes", "Details", new { id = item.ID })
+                                                </td>
+                                                }
+                                            </tr>
+                                        } }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

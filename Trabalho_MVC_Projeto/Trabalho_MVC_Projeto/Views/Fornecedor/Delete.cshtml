@@ -1,0 +1,95 @@
+﻿@model Trabalho_MVC_Projeto.Models.FornecedorModel
+
+@{ ViewBag.Title = "Deletar Fornecedor"; }
+
+<br />
+<div class="text-xs font-weight-bold text-dark text-uppercase mb-1">
+    Deletar Fornecedor
+</div>
+
+<hr />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-primary">
+                            <h4 class="card-title">Cadastro de Fornecedor</h4>
+                            <p class="card-category">Complete o cadastro!!</p>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Nome,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.LabelFor(model => model.Nome,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Nome, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Cnpj,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.LabelFor(model => model.Cnpj,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Cnpj, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Telefone,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.LabelFor(model => model.Telefone,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Telefone, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="form-group col-md-12">
+                                    @Html.LabelFor(model => model.Produto,
+                                   htmlAttributes: new { @class = "bmd-label-floating" })
+                                    <div class="col-md-10">
+                                        @Html.LabelFor(model => model.Produto,
+                                       new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Produto, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button type="submit" value="Save" class="btn btn-primary btn-icon-split">
+                                        <span class="icon text-white-50">
+                                            <i class="far fa-save">
+                                            </i>
+                                        </span>
+                                        <span class="text">Salvar</span>
+                                    </button>
+
+                                    <a class="btn btn-light" href="~/Fornecedor/Index">Voltar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
